@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login cliente</title>
+	<style type="text/css">
+		button{
+			font-size: 1.1rem;
+			background: none;
+			border: 0;
+			margin: 18px;
+			position: relative;
+			transition: all 500ms ease-in-out;
+			color:#AAA;
+
+		}
+ 		button:after {
+ 			content: '';
+ 			transition: inherit;
+ 			width: 45px;
+ 			height: 45px;
+ 			border-radius: 50%;
+ 			background: #00FFFF;
+ 			position: absolute;
+ 			top: -50%;
+ 			left: -10%;
+ 			opacity: 0.3;
+ 			z-index: -1;
+
+ 		}
+ 		button:hover:after {
+ 			width: calc(100% + 20px);
+ 			border-radius: 20px;
+ 			opacity: 0.6;
+
+ 		}
+ 		body{
+ 			height: 100vh;
+ 			display: flex;
+ 			align-items: center;
+ 			justify-content: center;
+ 			background: #181818;
+ 		}
+ 		.container {
+ 			width: 400px;
+ 			padding: 20px;
+ 			display: flex;
+ 			align-items: center;
+ 			justify-content: center;
+ 			flex-direction: column;
+ 			
+ 		}
+ 		input{
+ 			border-radius: 5px;
+ 			padding: 0 20px;
+ 			height: 50px;
+ 			font-size: 1.2rem;
+ 			background: #2E2E2E;
+ 			border: 0;
+ 			margin-bottom: 2px;
+ 			color:#AAA;
+ 			
+ 		}
+ 		a{
+ 			font-family: 'Roboto', sans-serif;
+ 			margin: 20px auto;
+ 			color: #AAA;
+ 		}
+ 		a:link{
+ 			text-decoration: none;
+ 		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="coracao.png" height="90px" width="90px">
+		<input type="name" name="nome" value=" " placeholder="Nome de usuário...">
+
+		<input type="email" name="e-mail" value="" placeholder="insira seu email..."> 
+
+		<input type="password" name="Senha" value="" placeholder="Senha...">
+
+<button>Login</button>
+<a href="#">Esqueceu a senha?</a>
+ </div>
+</body>
+</html>

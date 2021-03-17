@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title></title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: blanchedalmond;
+            height: 100vh;
+            
+        }
+        .box{
+            color: #AAA;
+            background-color: #181818;
+            height: 300px;
+            width: 300px;
+          
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition-property: background-color, border;
+            transition-duration: 2s, 1.5s;
+            transition-delay: 1s;
+            transition-timing-function: cubic-bezier(0.19, 0.89, 0.85, 26);
+        }
+        .box:hover{
+            background-color: blueviolet;
+            border-radius: 50%;
+            color: crimson;
+            transform: rotate(45deg) scale(1.5) translateX(100px);
+        }
+    </style>
+
+    </head>
+    <body>
+ <div class="box"> <p> usou-se as propriedades do transition e do transforme.</p></div>
+    </body>
+</html>

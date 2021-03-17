@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>caminho</title>
+	<style type="text/css">
+		:root {
+			--dark-grey: #9FABAE;
+			--light-grey: #DFE3E4;
+			--green: #2ECC71;
+		}
+		body{
+			font-family: 'roboto', sans-serif;
+			flex-direction: column;
+			background: #181818;
+
+
+		}
+		.principal{
+			padding: 40px 50px;
+ 			display: flex;
+ 			align-items: center;
+ 			justify-content: center;
+ 			flex-direction: column;
+		}
+		.container{
+			margin: 50px;
+			padding: 70px ;
+
+		}
+		button{
+			background: #52B5FD;
+			border: 0;
+			padding: 8px 20px;
+			border-radius:5px;
+			font-weight: bold;
+			color: #fff;
+			width: 100px;
+			text-align: center;
+			cursor: pointer;
+		}
+		ul {
+			list-style: none;
+			display: flex;
+			width:650px;
+			padding: 0;
+		}
+		ul li {
+			position: relative;
+			color: var(--dark-grey);
+			width: 25%;
+			text-align: center;
+			margin-top:20px;
+			padding: 14px;
+		}
+		ul li:before {
+			/* alinhar tudo ao centro*/
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			/* pegar o numero do step do html*/
+			content: attr(data-step);
+
+			/*circulo*/
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+
+			/*cores*/
+			background: var(--light-grey);
+			color: #9FABAE;
+
+			/*POSICIONAMENTO*/
+			position: absolute;
+			top:-30px;
+			left: calc(50% - 20px);
+			z-index: 99;
+		}
+		ul li:after{
+			/*desenha o traço*/
+			content: '';
+			width: 100%;
+			height: 5px;
+			background: var(--light-grey);
+
+			/* posiciona*/
+			position: absolute;
+			top: -35%;
+			left: -50%;
+		}
+		ul li:first-child:after{
+			width: 0;
+		}
+
+		/*colore a bolinha ativa*/
+		ul li.active:before{
+			background: var(--green);
+			color:#fff;
+		}
+
+		/*colore a linha ativa */
+		ul li.active:after{
+			background: var(--green);
+		}
+
+		/* coloreo texto do item*/
+		ul li.active{
+			color: var(--green);
+		}
+		button:disabled {
+			background: var(--dark-grey);
+			cursor: not-allowed;
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+		var activeStep = 1;
+		  var maxStep = 3;
+		  var minStep = 1;
+
+		  		/* variaveis dos botões*/
+		var previous = document.getElementById("previous");
+		
+		var next = document.getElementById("next");
+		
+
+
+		function checkButtonState(){
+
+			next.disabled= false;
+			previous.disabled= false;
+
+			if(activeStep === maxStep) {
+				next.disabled = true;
+			}
+
+			if(activeStep === minStep) {
+				previous.disabled = true;
+			}
+		}
+		 checkButtonState();
+
+		function onNextClick() {
+			activeStep = activeStep + 1;
+			document.querySelector(`[data-step="${activeStep}"]`).classList.add("active");
+			checkButtonState();
+			next.addEventListener('click', onNextClick);
+		}
+
+		function onPreviousClick(){
+			document.querySelector(`[data-step="${activeStep}"]`).classList.remove("active");
+			activeStep = activeStep - 1;
+			checkButtonState();
+			previous.addEventListener('click', onPreviousClick);
+		}
+
+		
+	</script>
+</head>
+<body>
+	<div class="principal">
+		<ul class="progressbar">
+			<li class="active" data-step="1">nome</li>
+
+			<li  class="active" data-step="2">senha</li>
+
+			<li  class="active" data-step="3">login</li>
+		</ul>
+	
+
+	<div class="container">
+		<button id=" previous ">Voltar</button>
+		<button id=" next ">Próximo</button>
+	</div>
+</div>
+</body>
+</html>

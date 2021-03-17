@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login pai</title>
+	<style type="text/css">
+		button{
+			background: none;
+			border: 0;
+			position: relative;
+			transition: all 500ms ease-in-out;
+			margin: 10px;
+
+		}
+		
+ 		button:after {
+ 			content: '';
+ 			transition: inherit;
+ 			width: 35px;
+ 			height: 35px;
+ 			border-radius: 50%;
+ 			background: red;
+ 			position: absolute;
+ 			top: -50%;
+ 			left: -10%;
+ 			opacity: 0.3;
+ 			z-index: -1;
+
+ 		}
+ 		button:hover:after {
+ 			width: calc(100% + 20px);
+ 			border-radius: 20px;
+ 			opacity: 0.6;
+
+ 		}
+ 		body{
+ 			height: 100vh;
+ 			display: flex;
+ 			align-items: center;
+ 			justify-content: center;
+ 		}
+ 		.container {
+ 			padding: 20px;
+ 			display: flex;
+ 			align-items: center;
+ 			justify-content: center;
+ 			flex-direction: column;
+ 			
+ 		}
+ 		label:hover{
+ 			color: red;
+ 		}
+ 		label{
+ 			color: #363636;
+ 		}
+
+ 		input{
+ 			border-radius: 5px;
+ 			padding: 0 20px;
+ 			height: 50px;
+ 			font-size: 1.2rem;
+ 			background: #D3D3D3;
+ 			border: 0;
+ 			margin-bottom: 2px;
+ 			color:#363636;
+ 			
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+		<input type="name" name="nome" value="" placeholder="Nome de usuário">
+		
+
+		<input type="password" name="Senha" value="" placeholder="Senha">
+
+		
+		 
+		<label for="proprietario">    Proprietário
+			<input type="radio" id="proprietario" name="pessoa">
+		</label>
+		<label for="Gerente"> Gerente
+			<input type="radio" id="Gerente" name="pessoa">
+		</label>
+<button>Login</button>
+ </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>barras</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+		body{
+			background: #181818;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			margin: 30%;
+			flex-direction: column;
+      		height: 100vh;
+		}
+
+		.container{
+			font-size: 1.3rem;
+			color: #AAA;
+			margin: 50px;
+			float: button;
+			height: 30px;
+			width: 110px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+
+		}
+		
+
+		span{
+			background: #5bff71;
+			width: 15px;
+			height: 50px;
+			display: inline-block;
+			margin: 0 2px;
+		}
+
+		span:nth-child(1) {
+			animation: grow 0.5s -0.45s ease-in-out alternate infinite;
+		}
+		span:nth-child(2) {
+			animation: grow 0.5s -0.3s ease-in-out alternate infinite;
+		}
+		span:nth-child(3) {
+			animation: grow 0.5s -0.15s ease-in-out alternate infinite;
+		}
+		span:nth-child(4) {
+			animation: grow 0.5s 0s ease-in-out alternate infinite;}
+
+		@keyframes grow {
+			to{
+				transform: scaleY(2);
+			}
+		}
+ /*loading*/
+.line{
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.75);
+      font-family: 'Special Elite', monospace;
+      font-size: 1em;
+      margin: 0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
+    }
+    .typing-animation{
+      animation: blinkCursor 500ms infinite normal, typing 4s steps(40) 1s infinite normal both;
+    }
+    @keyframes blinkCursor {
+      from{
+        border-right-color: rgba(255, 255, 255, 0.75);
+      }
+      to{
+        border-right-color: transparent;
+      }
+    }
+    @keyframes typing {
+      from{
+        width: 0;
+      }
+      to{
+        width: 13em;
+      }
+    }
+	</style>
+</head>
+<body>
+	<div >
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div class="container"><p class="line typing-animation">Loading...</p></div>
+</body>
+</html>

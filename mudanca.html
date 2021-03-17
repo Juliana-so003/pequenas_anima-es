@@ -7,6 +7,20 @@
                justify-content: center;
                display: flex;
                height: 100vh;
+               position: relative;
+           }
+           .container{
+
+             flex-direction: column-reverse;
+               border-radius: 8px;
+               border-color: rgb(3, 10, 10);
+               height: 500px;
+               width: 300px;
+           }
+           p{
+               padding: 40px;
+               font-size: 16px;
+               position: absolute;
            }
            img{
                height: 100px;
@@ -14,11 +28,20 @@
                border-radius: 8px;
            }
            img:hover{
-               background: src="cocoEvoluido.jpn";
+               width: 150px;
+               height: 150px;
+               
            }
+           
        </style>       
     </head>
     <body>
+        <p>escolha se prato</p>
+        <div class="container"> 
+        <img src="frango.jpeg">
+        <img src="peixe.jpeg">
+        <img src="bife.jpeg">
         <img src="cocoBebe.jpg">
+    </div>
     </body>
 </html>

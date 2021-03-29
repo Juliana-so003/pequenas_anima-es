@@ -4,176 +4,134 @@
 	<meta charset="utf-8">
 	<title>caminho</title>
 	<style type="text/css">
-		:root {
-			--dark-grey: #9FABAE;
-			--light-grey: #DFE3E4;
-			--green: #2ECC71;
-		}
-		body{
-			font-family: 'roboto', sans-serif;
-			flex-direction: column;
-			background: #181818;
+	:root{
+		--dark-grey: #9FABAE;
+		--light-grey: #DFE3E4;
+		--green: #2ECC71;
+	}
+	body{
+		flex-direction: column;
+		font-family: 'Roboto', sans-serif;
+	}
+	ul{
+		list-style: none;
+		display: flex;
+		width: 650px;
+		padding: 0;
+	}
+	ul li{
+		position: relative;
+		color: var(--dark-grey);
+		width: 25%;
+		text-align: center;
+		top:100px;
+	}
+	ul li:before{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
+		content: attr(data-step);
 
-		}
-		.principal{
-			padding: 40px 50px;
- 			display: flex;
- 			align-items: center;
- 			justify-content: center;
- 			flex-direction: column;
-		}
-		.container{
-			margin: 50px;
-			padding: 70px ;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
 
-		}
-		button{
-			background: #52B5FD;
-			border: 0;
-			padding: 8px 20px;
-			border-radius:5px;
-			font-weight: bold;
-			color: #fff;
-			width: 100px;
-			text-align: center;
-			cursor: pointer;
-		}
-		ul {
-			list-style: none;
-			display: flex;
-			width:650px;
-			padding: 0;
-		}
-		ul li {
-			position: relative;
-			color: var(--dark-grey);
-			width: 25%;
-			text-align: center;
-			margin-top:20px;
-			padding: 14px;
-		}
-		ul li:before {
-			/* alinhar tudo ao centro*/
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		background: var(--light-grey);
+		color: #9FABAE;
 
-			/* pegar o numero do step do html*/
-			content: attr(data-step);
+		position: absolute;
+		top: -50px;
+		left: calc(50% - 20px);
+		z-index: 99;
+	}
+	ul li:after {
+		content: '';
+		width: 100%;
+		height: 5px;
+		background: var(--light-grey);
 
-			/*circulo*/
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-
-			/*cores*/
-			background: var(--light-grey);
-			color: #9FABAE;
-
-			/*POSICIONAMENTO*/
-			position: absolute;
-			top:-30px;
-			left: calc(50% - 20px);
-			z-index: 99;
-		}
-		ul li:after{
-			/*desenha o traço*/
-			content: '';
-			width: 100%;
-			height: 5px;
-			background: var(--light-grey);
-
-			/* posiciona*/
-			position: absolute;
-			top: -35%;
-			left: -50%;
-		}
-		ul li:first-child:after{
-			width: 0;
-		}
-
-		/*colore a bolinha ativa*/
-		ul li.active:before{
-			background: var(--green);
-			color:#fff;
-		}
-
-		/*colore a linha ativa */
-		ul li.active:after{
-			background: var(--green);
-		}
-
-		/* coloreo texto do item*/
-		ul li.active{
-			color: var(--green);
-		}
-		button:disabled {
-			background: var(--dark-grey);
-			cursor: not-allowed;
-		}
+		position: absolute;
+		top: -35px;
+		left: -50%;
+	}
+	ul li:first-child:after {
+		width: 0;
+	}
+	ul li.active:before{
+		background: var(--green);
+		color: #fff;
+	}
+	ul li.active:after {
+		background: var(--green);
+	}
+	ul li.active{
+		color: var(--green);
+	}
+	.container{
+		margin: 50px auto;
+	
+	}
+	button{
+		background: #52B5FD;
+		border: 0;
+		padding: 8px 20px;
+		border-radius: 5px;
+		font-weight: bold;
+		color:#fff;
+		width: 100px;
+		text-align: center;
+		cursor: pointer;
+		margin-top: 200px;
+	}
+	button:disabled{
+	 	background: var(--dark-grey);
+		 cursor: not-allowed;
+	}
 	</style>
+	<script>
+		activeStep = 1;
+		maxStep = 4;
+		minStep = 1;
+		checkButtonState();
 
-	<script type="text/javascript">
+		function onNextClick() {
+			activeStep = activeStep + 1;
+			document.querySelector(`[data-step="${activeStep}"]`).classList.add('active');
+			checkButtonState();
+		}
+		function onPreviousClick() {
+			document.querySelector(`[data-step="${activeStep}"]`).classList.remove('active');
+			activeStep = activeStep - 1;
+			checkButtonState();
+		} 
 		
-		var activeStep = 1;
-		  var maxStep = 3;
-		  var minStep = 1;
-
-		  		/* variaveis dos botões*/
-		var previous = document.getElementById("previous");
-		
-		var next = document.getElementById("next");
-		
-
-
-		function checkButtonState(){
-
+		function checkButtonState() {
 			next.disabled= false;
 			previous.disabled= false;
 
 			if(activeStep === maxStep) {
 				next.disabled = true;
 			}
-
 			if(activeStep === minStep) {
 				previous.disabled = true;
 			}
 		}
-		 checkButtonState();
-
-		function onNextClick() {
-			activeStep = activeStep + 1;
-			document.querySelector(`[data-step="${activeStep}"]`).classList.add("active");
-			checkButtonState();
-			next.addEventListener('click', onNextClick);
-		}
-
-		function onPreviousClick(){
-			document.querySelector(`[data-step="${activeStep}"]`).classList.remove("active");
-			activeStep = activeStep - 1;
-			checkButtonState();
-			previous.addEventListener('click', onPreviousClick);
-		}
-
-		
 	</script>
+
 </head>
 <body>
-	<div class="principal">
-		<ul class="progressbar">
-			<li class="active" data-step="1">nome</li>
-
-			<li  class="active" data-step="2">senha</li>
-
-			<li  class="active" data-step="3">login</li>
-		</ul>
-	
-
 	<div class="container">
-		<button id=" previous ">Voltar</button>
-		<button id=" next ">Próximo</button>
+		<ul class="progressbar">
+			<li class="active" data-step="1">Crie sua conta</li>
+			<li class="active" data-step="2">Endereço</li>
+			<li data-step="3">Pagamento</li>
+			<li data-step="4">Pagamento</li>
+		</ul>
 	</div>
-</div>
+	<div class="container">
+		<button id="previous">Voltar</button>
+		<button id="next">Proximo</button>
+	</div>
 </body>
 </html>

@@ -64,7 +64,7 @@
            }
            .imagem{
                background-color: rgba(39, 51, 71, 0.4);
-            animation: imga 3s ease-out  1 normal forwards;
+            animation: imga 2.5s ease-out  1 normal forwards;
                 border-radius: 8px;
              float: right;
                margin: 0 10px 0 10px;
@@ -83,7 +83,7 @@
             margin-right: 50%;
             border-radius: 5px;
             float: right;
-            animation: imgas 1.5s ease-out  1 normal forwards;
+            animation: imgas 3s ease-out  1 normal forwards;
         }
         .img2{
             position: absolute;
@@ -93,7 +93,7 @@
             margin-left: 55%;
             border-radius: 5px;
             float: right;
-            animation: imgas 1.7s ease-out  1 normal forwards;
+            animation: imgas 2.5s ease-out  1 normal forwards;
         }
         @keyframes imgas{
                100%{
@@ -107,10 +107,31 @@
                }
                0%{transform: translateX(900px);}
            }
-
+           .img3{
+               height: 70px;
+               width: 80px;
+               position: fixed;
+               margin: 100px 40px;
+               
+           }
+           .img4{
+               height: 70px;
+               width: 70px;
+               position: fixed;
+               margin: 100px 40px;
+              
+           }
+           .img3:hover{
+           transform: translateY(70px);
+           transition-duration:2s;
+           transition-delay: 0s;
+           }
+           
        </style>       
     </head>
     <body>
+        <img class="img4" src="arma.png">
+        <img class="img3" src="caixa.jpg">
         <div class="container"> 
         <div class="titulo">
             <hi>Vincezo Cassano</hi>

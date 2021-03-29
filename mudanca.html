@@ -3,45 +3,126 @@
     <head>
        <style>
            body{
-               align-items: center;
-               justify-content: center;
-               display: flex;
-               height: 100vh;
-               position: relative;
+                display: flexbox;
+                height: 100vh;
+                overflow: hidden;
+                background-color: #181818;
            }
            .container{
-
-             flex-direction: column-reverse;
-               border-radius: 8px;
-               border-color: rgb(3, 10, 10);
-               height: 500px;
-               width: 300px;
-           }
-           p{
-               padding: 40px;
-               font-size: 16px;
+               height: 90%;
+               width:50%;
                position: absolute;
-           }
-           img{
-               height: 100px;
-               width: 100px;
+               align-items:center;
+               justify-content: center;
+               display:flex;
+               flex-direction: column;
+               animation: containers 3s ease-out 1 normal forwards;
+               background-color: rgba(179, 25, 25, 0.4);
                border-radius: 8px;
            }
-           img:hover{
-               width: 150px;
-               height: 150px;
-               
+           @keyframes containers{
+               0%{
+                   transform: translateX(-1000px);
+               }
+               100%{transform: translateX(100px);}
            }
-           
+           .titulo{
+               width: 50%;
+               font-size: 40px;
+               color:#AAA;
+               background-color: hsl(0, 0%, 15%);
+               padding: 3px 10px;
+               margin: 5px;
+               border-radius: 2px;
+               animation: titulos 2s ease-out 1 normal forwards;
+               text-align: center;
+           }
+           @keyframes titulos{
+               0%{
+                   transform: translateX(-1000px);
+               }
+               100%{transform: translateX(100px);}
+           }
+           .texto{
+               padding: 10px;
+               text-align: center;
+               height: 40vh;
+               width: 50%;
+            font-size: 20px;
+               color:#AAA;
+               background-color: hsl(0, 0%, 15%);
+               padding: 5px;
+               margin: 5px;
+               border-radius: 2px;
+               animation: textos 2.5s ease-out 1 normal forwards;
+           }
+           @keyframes textos{
+               0%{
+                   transform: translateX(-1000px);
+               }
+              100%{transform: translateX(100px);}
+           }
+           .imagem{
+               background-color: rgba(39, 51, 71, 0.4);
+            animation: imga 3s ease-out  1 normal forwards;
+                border-radius: 8px;
+             float: right;
+               margin: 0 10px 0 10px;
+               height: 90vh;
+               width: 500px;
+               align-content: center;
+               position: relative;
+               align-items:center;
+               justify-content: center;
+               display:flex;
+               flex-direction: column;
+           }
+        .img1{
+            position: absolute;
+            margin-top: 15%;
+            margin-right: 50%;
+            border-radius: 5px;
+            float: right;
+            animation: imgas 1.5s ease-out  1 normal forwards;
+        }
+        .img2{
+            position: absolute;
+            width: 210px;
+            height: 150px;
+            margin-top: 100px;
+            margin-left: 55%;
+            border-radius: 5px;
+            float: right;
+            animation: imgas 1.7s ease-out  1 normal forwards;
+        }
+        @keyframes imgas{
+               100%{
+                   transform: translateX(-10px);
+               }
+               0%{transform: translateX(50%);}
+           }
+           @keyframes imga{
+               100%{
+                   transform: translateX(-10px);
+               }
+               0%{transform: translateX(900px);}
+           }
+
        </style>       
     </head>
     <body>
-        <p>escolha se prato</p>
         <div class="container"> 
-        <img src="frango.jpeg">
-        <img src="peixe.jpeg">
-        <img src="bife.jpeg">
-        <img src="cocoBebe.jpg">
+        <div class="titulo">
+            <hi>Vincezo Cassano</hi>
+        </div>
+        <div class="texto"> 
+            <p>Vincenzo conta a história de Vincenzo Cassano (Joong-ki Song), um advogado (congliere) coreano que mora na Itália desde os oito anos, após ter sido adotado como consequência de uma traição de gangue. Ele agora trabalha para uma família de mafiosos italianos, que vive sempre em pé de guerra com outras facções.</p>
+        </div>
     </div>
+            <div class="imagem"> 
+        <img src="vAnBe_4c.jpg" class="img1"> 
+        <img src="maxresdefault.jpg" class="img2">
+    </div>
+   
     </body>
 </html>

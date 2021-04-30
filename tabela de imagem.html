@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+           body{
+                height: 100vh;
+                background-color: #181818;
+                align-items:center;
+               justify-content: center;
+               display:flex;
+               font-size: medium;
+               color: #AAA;
+           }
+           .container{ /*a classe vermelha*/
+               height: 90vh;
+               width:49%;
+               align-items:center;
+               justify-content: center;
+               display:flex;
+               flex-direction: column;
+               background-color: rgba(126, 119, 119, 0.4);
+               border-radius: 10px;
+           }
+           </style>
+    </head>
+    <body>
+        
+        <div class="container"> 
+            <form enctype="multipart/form-data" action="salvar.php" method="post">
+                Imagem: <input name="userfile" type="file" />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
+    </body>
+</html>

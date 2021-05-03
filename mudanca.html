@@ -3,30 +3,43 @@
     <head>
        <style>
            body{
+                /* as coisas referente ao body*/
                 display: flexbox;
                 height: 100vh;
-                overflow: hidden;
                 background-color: #181818;
            }
-           .container{
-               height: 90%;
-               width:50%;
+           .container{ /*a classe vermelha*/
+                /*altura -altura recebe o vh no lugar da %- e largura*/
+               height: 90vh;
+               width:49%;
+
+                /*posição absoluta em relação ao body*/
                position: absolute;
+
+                /*aliando os conteudos da classe container*/
                align-items:center;
                justify-content: center;
                display:flex;
+
+                /*fazendo com que o conteudo da classe fique em posição de coluna*/
                flex-direction: column;
+                /*chamando a animação do @keyframes*/
                animation: containers 3s ease-out 1 normal forwards;
                background-color: rgba(179, 25, 25, 0.4);
                border-radius: 8px;
            }
            @keyframes containers{
-               0%{
+                /*especificando o que vai acontecer com
+           o elemento em momentos chaves da animação*/
+              /* Ele vai começar na posição do eixo X (horizontal) -1000px,
+               ou seja fora da tela, e vai parar no 100px*/
+               0%{ 
                    transform: translateX(-1000px);
                }
                100%{transform: translateX(100px);}
            }
-           .titulo{
+
+           .titulo{ /*essas são as configurações do titulo "Vincenzo Cassano"*/
                width: 50%;
                font-size: 40px;
                color:#AAA;
@@ -34,26 +47,30 @@
                padding: 3px 10px;
                margin: 5px;
                border-radius: 2px;
-               animation: titulos 2s ease-out 1 normal forwards;
                text-align: center;
+           /*chando o keyframes*/
+               animation: titulos 2s ease-out 1 normal forwards;
            }
-           @keyframes titulos{
+           @keyframes titulos{ 
+               /*esse faz a mesma coisa do keyframes passado, e todos os keyframes que tiverem o 
+           transform: transitionX, significa que vao se locomover horizontalmente*/
                0%{
                    transform: translateX(-1000px);
                }
                100%{transform: translateX(100px);}
            }
-           .texto{
+           .texto{ /*essas são a configuração do texto que aparecem*/
                padding: 10px;
                text-align: center;
                height: 40vh;
                width: 50%;
-            font-size: 20px;
+               font-size: 20px;
                color:#AAA;
                background-color: hsl(0, 0%, 15%);
                padding: 5px;
                margin: 5px;
                border-radius: 2px;
+               /*chamando seu respectivo keyframes e dando os devidos comandos*/
                animation: textos 2.5s ease-out 1 normal forwards;
            }
            @keyframes textos{
@@ -62,11 +79,13 @@
                }
               100%{transform: translateX(100px);}
            }
-           .imagem{
+           .imagem{ /*essa é a div cinza*/
                background-color: rgba(39, 51, 71, 0.4);
-            animation: imga 2.5s ease-out  1 normal forwards;
+               /*chaamndo seu keyframes. relacionem o keyframes com o nome que tem
+               nessa animaçao ela chama o keyframes com o nome imga*/
+                animation: imga 2.5s ease-out  1 normal forwards;
                 border-radius: 8px;
-             float: right;
+               float: right;
                margin: 0 10px 0 10px;
                height: 90vh;
                width: 500px;
@@ -78,13 +97,22 @@
                flex-direction: column;
            }
         .img1{
+            /*essa é a imagem principal*/
             position: absolute;
             margin-top: 15%;
             margin-right: 50%;
             border-radius: 5px;
+            /*colocando ele de um lado da pagina*/
             float: right;
+            /*chamando o keyframes*/
             animation: imgas 3s ease-out  1 normal forwards;
         }
+        @keyframes imgas{/*esse é o keyframes da class .img1*/
+               100%{
+                   transform: translateX(-10px);
+               }
+               0%{transform: translateX(50%);}
+           }
         .img2{
             position: absolute;
             width: 210px;
@@ -93,45 +121,46 @@
             margin-left: 55%;
             border-radius: 5px;
             float: right;
-            animation: imgas 2.5s ease-out  1 normal forwards;
+            /*chaamndo o seu keyframes*/
+            animation: imga 2.7s ease-out  1 normal forwards;
         }
-        @keyframes imgas{
-               100%{
-                   transform: translateX(-10px);
-               }
-               0%{transform: translateX(50%);}
-           }
            @keyframes imga{
+               /*keyframes da class img2, da segunda imagem*/
                100%{
                    transform: translateX(-10px);
                }
                0%{transform: translateX(900px);}
            }
            .img3{
+                /*a classe da imagem da tampa*/
                height: 70px;
                width: 80px;
                position: fixed;
                margin: 100px 40px;
-               
            }
-           .img4{
-               height: 70px;
-               width: 70px;
-               position: fixed;
-               margin: 100px 40px;
-              
-           }
-           .img3:hover{
+           .img3:hover{ 
+         /*aqui mostra o que vai acontecer com a imagem, quando o mouser foi passado por cima*/
            transform: translateY(-70px);
            transition-duration:2s;
            transition-delay: 0s;
            }
-           
+        
+           .img4{  
+               /*a imagem da faca*/
+               border-radius: 8px;
+               height: 70px;
+               width: 70px;
+               position: fixed;
+               margin: 100px 40px;
+              background-color: hsl(219, 79%, 66%, 0.2);
+           }
+          
        </style>       
     </head>
-    <body>
-        <img class="img4" src="arma.png">
-        <img class="img3" src="prato.png">
+    <body> 
+        
+        <img class="img4" src="faca.png">
+        <img class="img3" src="panela.png">
         <div class="container"> 
         <div class="titulo">
             <hi>Vincezo Cassano</hi>

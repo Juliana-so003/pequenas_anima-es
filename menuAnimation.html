@@ -34,13 +34,9 @@
 		input[type="radio"] {
 		display: none; 
 		}
-		input[type="radio"] {
-			&:checked {
-				& + label {
+		input[type="radio"]:checked+label {
 					color: #32CD32; 
 				}
-			}
-		}
 		.selecione-elemento{
 			background:  blue;
 			width: 55px;
@@ -51,29 +47,22 @@
 			transition: 0.25s easy-out;
 		}
 
-		input[id="radio1"]{
-			&:checked{
-				& ~ .selecione-elemento{
+		input[id="radio1"]:checked~.selecione-elemento{
 					transform:translateX(100%);
 				}
-			}
-		}
+			
+		
 
-		input[id="radio2"]{
-			&:checked{
-				& ~ .selecione-elemento{
+		input[id="radio2"]:checked~.selecione-elemento{
 					transform:translateX(200%);
 				}
-			}
-		}
+			
 
-		input[id="radio3"]{
-			&:checked{
-				& ~ .selecione-elemento{
+		input[id="radio3"]:checked~.selecione-elemento{
 					transform:translateX(300%);
 				}
-			}
-		}
+			
+		
 	</style>
   <script src="https://unpkg.com/feather-icons"></script>
   <body>

@@ -1,49 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>bolinhas linhas </title>
-	<style type="text/css">
-	body{
- 			height: 100vh;
- 			display: flex;
- 			align-items: center;
- 			justify-content: center;
- 			background: #181818;
- 		}
-	.dots{
-			display: flex;
-			align-items: center;
- 			justify-content: center;
- 			align-items: center;
- 			justify-content: center;
-
-		}
-		.dots div{
-			width: 50px;
-			height: 50px;
-			background: #00FFFF;
-			border-radius: 50%;
-			margin-left: 15px;
-
-			animation: ware  1s ease-in-out infinite alternate ;
-		}
-		
-		.dots div:nth-child(1) {
-			animation-delay: -0.4s;
-		}
-		.dots div:nth-child(2) {
-			animation-delay: -0.2s;
-		}
-		@keyframes ware{
-			from {
-				transform: translateY(-100%);
-			}
-			to {
-				transform: translateY(100%);
-			}
-		}
-		
-		.image {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      body, * {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f2f2f2;
+}
+.image {
 
   width: 90px;
   height: 90px;
@@ -122,27 +91,17 @@
   border: 1px solid #fff;
   font-style: normal;
 }
-	</style>
+    </style>
 </head>
+
 <body>
-<div class="dots">
-	<div></div>
-	<div></div>
-	<div></div>
-</div>
-<div class="image">
-  <div class="editar-content">
-    <span>
-      <i>editar</i>
-    </span>
-  </div>
-  <div id="new">
-    <div class="close-preview-js close-preview">x</div>
-  </div>
-  <img src="https://jamesrmoro.me/wp-content/uploads/2021/02/profile.png" alt="Sem imagem">
-</div>
-<script>
-  <script>var btnClose = document.querySelector('.close-preview-js');
+
+<br>
+<input id="file-preview-js" type="file" accept="image/*" onchange="loaderFile(event)"><br><br>
+<a href="loading1.html">
+<input type="submit" value="Enviar">
+</a>
+<script>var btnClose = document.querySelector('.close-preview-js');
     var output = document.getElementById("new");
     var loaderFile = function(event){
     var reader = new FileReader();
@@ -166,6 +125,6 @@
       output.style.backgroundImage = "url('')";
       document.getElementById("file-preview-js").value = "";
     });</script>
-</script>
 </body>
+
 </html>

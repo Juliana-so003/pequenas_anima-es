@@ -113,6 +113,17 @@ body {
   </div>
   <img src="https://jamesrmoro.me/wp-content/uploads/2021/02/profile.png" alt="Sem imagem">
 </div>
+<div class="image">
+  <div class="editar-content">
+    <span>
+      <i>editar</i>
+    </span>
+  </div>
+  <div id="naw">
+    <div class="close-preview-js close-preview">x</div>
+  </div>
+  <img src="https://jamesrmoro.me/wp-content/uploads/2021/02/profile.png" alt="Sem imagem">
+</div>
 <br>
 
 
@@ -120,12 +131,16 @@ body {
 
 <script>var btnClose = document.querySelector('.close-preview-js');
     var output = document.getElementById("new");
+var output2 = document.getElementById("naw");
     var loaderFile = function(event){
     var reader = new FileReader();
       reader.onload = function() {
         output.style.display = "block";
+        output2.style.display = "block";
         btnClose.style.display = "block";
         output.style.backgroundImage = "url("+reader.result+")";
+      }
+      output2.style.backgroundImage = "url("+reader.result+")";
       }
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -140,6 +155,7 @@ body {
     btnClose.addEventListener("click", function(){
       btnClose.style.display = "none";
       output.style.backgroundImage = "url('')";
+      output2.style.backgroundImage = "url('')";
       document.getElementById("file-preview-js").value = "";
     });</script>
 </body>
